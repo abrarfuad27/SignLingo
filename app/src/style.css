@@ -15,9 +15,10 @@ body {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
-  height: 6rem;
+  height: 8rem;
   padding: 1rem;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition properties */
+  text-align: center;
 }
 
 .navbar:hover {
@@ -32,9 +33,7 @@ body {
   margin-left: 2rem;
 }
 
-.navbar-header-C {
-  color: #e83aae;
-}
-.navbar-header-M {
-  color: #e83aae;
+.logo {
+  width: 18rem;
+  height: 6rem;
 }
