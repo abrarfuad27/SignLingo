@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Space Mono", monospace;
+}
+body {
+  background-color: antiquewhite;
+}
+
+.navbar {
+  background-color: #196c7b;
+  width: 100%;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  height: 6rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition properties */
+}
+
+.navbar:hover {
+  background-color: #0b5e60; /* Change the background color on hover */
+  transform: translateY(-5px); /* Add a slight upward lift on hover */
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2); /* Modify the box shadow */
+}
+.navbar-header {
+  color: aliceblue;
+  font-weight: 900;
+  font-size: 3rem;
+  margin-left: 2rem;
+}
+
+.navbar-header-C {
+  color: #e83aae;
+}
+.navbar-header-M {
+  color: #e83aae;
+}
