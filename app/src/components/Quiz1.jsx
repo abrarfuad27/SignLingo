@@ -242,20 +242,25 @@ export default function Quiz1() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswer, setUserAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const [correctOption, setCorrectOption] = useState(null);
+  const [currentIndex,setCurrentIndex] = useState(null)
 
-  const handleAnswer = (answer) => {
+  const handleAnswer = (answer,index) => {
     setUserAnswer(answer);
 
     if (answer) {
       setScore(score + 1);
     }
-    handleNextQuestion();
+    setCorrectOption(answer);
+    setCurrentIndex(index);
   };
 
   const handleNextQuestion = () => {
     // Move to the next question if the user answered correctly
     setCurrentQuestion(currentQuestion + 1);
     setUserAnswer(null);
+    setCorrectOption(null);
+    setCurrentIndex(null);
   };
 
   const renderQuestion = () => {
@@ -269,7 +274,9 @@ export default function Quiz1() {
             {currentQ.options.map((option, index) => (
               <li key={index}>
                 <button
-                  onClick={() => handleAnswer(option.correct)}
+                
+                
+                  onClick={() => handleAnswer(option.correct,index)}
                   disabled={userAnswer !== null}
                 >
                   <img
@@ -296,8 +303,8 @@ export default function Quiz1() {
             {currentQ.options.map((option, index) => (
               <li key={index}>
                 <button
-                  className="text-option"
-                  onClick={() => handleAnswer(option.correct)}
+                  className="text-option "
+                  onClick={() => handleAnswer(option.correct,index)}
                   disabled={userAnswer !== null}
                 >
                   {option.image}
@@ -320,7 +327,7 @@ export default function Quiz1() {
         {currentQuestion < questions.length ? (
           <div className="nextquestionbutton">
             {renderQuestion()}
-            <button onClick={handleNextQuestion} disabled={userAnswer === null}>
+            <button className="nextques" onClick={handleNextQuestion} disabled={userAnswer === null}>
               Next Question
             </button>
           </div>

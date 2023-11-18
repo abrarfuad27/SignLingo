@@ -201,3 +201,27 @@ body {
 ul {
   list-style-type: none;
 }
+
+.correct-option {
+  border-color: green;
+}
+
+.incorrect-option {
+  border-color: red;
+}
+
+.nextques{
+  width: 5rem;
+  border-radius: 10px;
+  border: none;
+  height: 3rem;
+  color: white;
+  background-color: #2e6b31;
+  cursor: pointer;
+  transition: background-color 0.3s,
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */
+  &:hover {
+    background-color: #214e24; /* Darker green on hover */
+    transform: scale(1.02);
+  }
+}
