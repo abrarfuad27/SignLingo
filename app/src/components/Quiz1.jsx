@@ -2,7 +2,7 @@ import React, { useState, Component } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
-const questions = [ 
+const questions = [
   {
     id: 1,
     type: "textToImage",
@@ -90,8 +90,8 @@ const questions = [
     options: [
       { image: "/assets/alphabet_image/6.jpg", correct: false },
       { image: "/assets/alphabet_image/8.jpg", correct: true },
-      { image: "/assets/alphabet_image/9.jpg", correct: true },
-      { image: "/assets/alphabet_image/3.jpg", correct: true },
+      { image: "/assets/alphabet_image/9.jpg", correct: false },
+      { image: "/assets/alphabet_image/3.jpg", correct: false },
     ],
   },
   {
@@ -208,7 +208,7 @@ const questions = [
     options: [
       { image: "8", correct: true },
       { image: "10", correct: false },
-      { image: "1", correct: true },
+      { image: "1", correct: false },
       { image: "5", correct: false },
     ],
   },
@@ -263,7 +263,7 @@ export default function Quiz1() {
 
     if (currentQ.type === "textToImage") {
       return (
-        <div   className="question">
+        <div className="question">
           <p>{currentQ.text}</p>
           <ul className="imageoptiongrid">
             {currentQ.options.map((option, index) => (
@@ -272,7 +272,11 @@ export default function Quiz1() {
                   onClick={() => handleAnswer(option.correct)}
                   disabled={userAnswer !== null}
                 >
-                  <img className="image-options" src={option.image} alt="option" />
+                  <img
+                    className="image-options"
+                    src={option.image}
+                    alt="option"
+                  />
                 </button>
               </li>
             ))}
@@ -281,13 +285,18 @@ export default function Quiz1() {
       );
     } else if (currentQ.type === "imageToText") {
       return (
-        <div  className="question" >
+        <div className="question">
           <p>{currentQ.text}</p>
-          <img className="image-question" src={currentQ.imageURL} alt="Sign Language Image" />
+          <img
+            className="image-question"
+            src={currentQ.imageURL}
+            alt="Sign Language Image"
+          />
           <ul className="textoptiongrid">
             {currentQ.options.map((option, index) => (
-              <li  key={index}>
-                <button className="text-option"
+              <li key={index}>
+                <button
+                  className="text-option"
                   onClick={() => handleAnswer(option.correct)}
                   disabled={userAnswer !== null}
                 >
