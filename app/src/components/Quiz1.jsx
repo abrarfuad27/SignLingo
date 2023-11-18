@@ -24,13 +24,15 @@ const questions = [
   {id:3,
     type: "textToImage",
     text: "What is the asl sign for 3",
-    options: ["/assets/alphabet_image6.jpg", "/assets/alphabet_image/3.jpg", "/assets/alphabet_image/4.jpg", "/assets/alphabet_image/2.jpg" ],
-    correctAnswer: "/assets/alphabet_image/3.jpg",
+    options: [
+      { image: "/assets/alphabet_image/3.jpg", correct: true },
+      { image: "/assets/alphabet_image/6.jpg", correct: false}, 
+      { image: "/assets/alphabet_image/I.jpg", correct: false},
+      { image: "/assets/alphabet_image/2.jpg", correct: false}],
   },
   {id:4,
     type: "textToImage",
     text: "What is the asl sign for 4",
-    options: ["/assets/alphabet_image/7.jpg", "/assets/alphabet_image/10.jpg", "/assets/alphabet_image/4.jpg", "/assets/alphabet_image/3.jpg" ],
     options: [
       { image: "/assets/alphabet_image/7.jpg", correct: false },
       { image: "/assets/alphabet_image/10.jpg", correct: false}, 
@@ -42,7 +44,7 @@ const questions = [
     text: "What is the asl sign for 5",
     options: [
       { image: "/assets/alphabet_image/5.jpg", correct: true },
-      { image: "/assets/alphabet_image/2.jpg", correct: false}, 
+      { image: "/assets/alphabet_image/B.jpg", correct: false}, 
       { image: "/assets/alphabet_image/7.jpg", correct: false},
       { image: "/assets/alphabet_image/6.jpg", correct: false}],
   },
@@ -73,8 +75,8 @@ const questions = [
     options: [
       { image: "/assets/alphabet_image/6.jpg", correct: false },
       { image: "/assets/alphabet_image/8.jpg", correct: true}, 
-      { image: "/assets/alphabet_image/9.jpg", correct: true},
-      { image: "/assets/alphabet_image/3.jpg", correct: true}],
+      { image: "/assets/alphabet_image/M.jpg", correct: false},
+      { image: "/assets/alphabet_image/3.jpg", correct: false}],
   },
   {id:9,
     type: "textToImage",
