@@ -38,7 +38,7 @@ body {
   height: 6rem;
 }
 
-.homepage-buttons{
+.homepage-buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -46,7 +46,8 @@ body {
   margin-top: 10rem;
 }
 
-.learn-button, .quiz-button{
+.learn-button,
+.quiz-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,26 +57,65 @@ body {
   font-weight: 800;
   width: 12rem;
   height: 6rem;
-  padding:0.5rem;
+  padding: 0.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
   border: none;
   background-color: #2e6b31; /* Green background color */
-  transition: background-color 0.3s, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */  &:hover {
+  transition: background-color 0.3s,
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */
+  &:hover {
     background-color: #214e24; /* Darker green on hover */
     transform: scale(1.1);
   }
 }
 
-.learn-container{
+.learn-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.flashcard-image{
+.flashcard-image {
   width: 4rem;
   height: 4rem;
+  border-radius: 5px;
 }
 
+.flashcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition properties */
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.flashcard-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Six items per row */
+  gap: 16px; /* Adjust the gap between items as needed */
+}
+
+
+.quizpage-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.quiz-button{
+  width: 17rem;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import '../style.css'
 import data from './data'
 import FlashCard from './FlashCard';
+import Navbar from './Navbar';
 
 
 export default function LearnPage(){
@@ -9,9 +10,11 @@ export default function LearnPage(){
         return <FlashCard key={index} card={card} />
     })
     return (
+        <>
+        <Navbar />
         <div className='learn-container'>
             <div className='alphabets'>
-                <h3> Alphabets</h3>
+                <h2> Alphabets & Numerals</h2>
                 <div className='flashcard-container'>
                     {cardArray}
                     </div>
@@ -19,5 +22,6 @@ export default function LearnPage(){
 
             
         </div>
+        </>
     )
 }
