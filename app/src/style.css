@@ -107,8 +107,7 @@ body {
   gap: 16px; /* Adjust the gap between items as needed */
 }
 
-
-.quizpage-container{
+.quizpage-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -116,19 +115,20 @@ body {
   margin-top: 2rem;
 }
 
-.quiz-button{
+.quiz-button {
   width: 17rem;
 }
 
-.quiz1page-container{
+.quiz1page-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
-  margin-top: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-.quiz1finish-button{
+.quiz1finish-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,4 +150,54 @@ body {
     background-color: #214e24; /* Darker green on hover */
     transform: scale(1.02);
   }
+}
+
+.imageoptiongrid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  gap: 1.6rem; /* Adjust the gap between items as needed */
+}
+
+.image-options {
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+}
+
+.image-question {
+  width: 6rem;
+  height: 6rem;
+}
+
+.textoptiongrid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  gap: 1.6rem; /* Adjust the gap between items as needed */
+  align-items: center;
+}
+
+.text-option {
+  width: 4rem;
+  height: 3rem;
+}
+
+.question{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nextquestionbutton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+ul {
+  list-style-type: none;
 }
