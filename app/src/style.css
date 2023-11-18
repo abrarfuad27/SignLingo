@@ -74,5 +74,8 @@ body {
   align-items: center;
 }
 
-
+.flashcard-image{
+  width: 4rem;
+  height: 4rem;
+}
 
