@@ -47,7 +47,7 @@ export default function RecordsPage() {
   return (
     <div>
       <Navbar />
-      <button onClick={signout}>Log Out</button>
+      <button className= "signout-button" onClick={signout}>Log Out</button>
     </div>
   );
 }
