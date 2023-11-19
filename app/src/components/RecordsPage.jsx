@@ -11,6 +11,7 @@ Chart.register(...registerables);
 export default function RecordsPage() {
   const { userInfo, setUserInfo } = useContext(userContext);
   const [activityData, setActivityData] = useState([]);
+  const navigate = useNavigate(); // Get the navigate function
 
   useEffect(() => {
     if (userInfo.username) {
@@ -23,8 +24,8 @@ export default function RecordsPage() {
             "http://127.0.0.1:5000/api/getrecord",
             userData
           );
-          console.log(response.data)
-          setActivityData(response.data.activity)
+          console.log(response.data);
+          setActivityData(response.data.activity);
         } catch (err) {
           console.log(`Error->${err}`);
         }
@@ -33,11 +34,20 @@ export default function RecordsPage() {
     }
   }, [userInfo]);
 
+  function signout() {
+    sessionStorage.clear();
+    setUserInfo({
+      username: "",
+      email: "",
+      token: "",
+    });
+    navigate("/");
+  }
+
   return (
     <div>
       <Navbar />
-      <button >Log Out</button>
-
+      <button onClick={signout}>Log Out</button>
     </div>
   );
 }
