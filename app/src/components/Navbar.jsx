@@ -6,6 +6,7 @@ export default function Navbar() {
     <Link to = "/" >
     <nav className="navbar">
       <img className="logo" src='/assets/penguin.png' alt="Logo" />
+      <img className="user-logo" src='/assets/user-profile-icon.png' alt="user_profile" />
     </nav>
     </Link>
     /* <h1 className="navbar-header">

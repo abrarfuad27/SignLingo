@@ -38,7 +38,7 @@ def receive_photo():
 
 #@app.route('/api/data', methods=[''])
 def get_data(img):
-    # Load the image using PIL
+    
     # load model
     model = tf.keras.models.load_model("try_model.h5")
     model.compile(loss='categorical_crossentropy',
@@ -47,8 +47,6 @@ def get_data(img):
 
     img_path = img
     img = Image.open(img_path)
-
-    # Create an instance of the Model class
 
     # Call the preprocess_image function
     letter = Model.preprocess_image(img, model)
