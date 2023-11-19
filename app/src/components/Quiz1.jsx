@@ -2,7 +2,7 @@ import React, { useState, Component } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
-const questions = [ 
+const questions = [
   {
     id: 1,
     type: "textToImage",
@@ -236,8 +236,6 @@ const questions = [
       { image: "9", correct: false },
     ],
   },
- 
-  
 ];
 
 const shuffleArray = (array) => {
@@ -257,7 +255,7 @@ const randomlySelectedQuestions = questions.reduce((acc, element, id) => {
     if (randomNumber < 0.5) {
       acc.push(element);
     } else {
-      acc.push(questions[id+1]);
+      acc.push(questions[id + 1]);
     }
   }
 
@@ -272,6 +270,7 @@ export default function Quiz1() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswer, setUserAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const [correctOption, setCorrectOption] = useState(null);
 
   const handleAnswer = (answer) => {
     setUserAnswer(answer);
@@ -279,12 +278,14 @@ export default function Quiz1() {
     if (answer) {
       setScore(score + 1);
     }
+    setCorrectOption(answer.correct);
   };
 
   const handleNextQuestion = () => {
     // Move to the next question if the user answered correctly
     setCurrentQuestion(currentQuestion + 1);
     setUserAnswer(null);
+    setCorrectOption(null);
   };
 
   const renderQuestion = () => {
@@ -292,16 +293,24 @@ export default function Quiz1() {
 
     if (currentQ.type === "textToImage") {
       return (
-        <div   className="question">
+        <div className="question">
           <p>{currentQ.text}</p>
           <ul className="imageoptiongrid">
             {currentQ.options.map((option, index) => (
               <li key={index}>
                 <button
+                  className={`
+                ${userAnswer !== null && option.correct && "correct-option"}
+                ${userAnswer !== null && !option.correct && "incorrect-option"}
+              `}
                   onClick={() => handleAnswer(option.correct)}
                   disabled={userAnswer !== null}
                 >
-                  <img className="image-options" src={option.image} alt="option" />
+                  <img
+                    className="image-options"
+                    src={option.image}
+                    alt="option"
+                  />
                 </button>
               </li>
             ))}
@@ -310,13 +319,23 @@ export default function Quiz1() {
       );
     } else if (currentQ.type === "imageToText") {
       return (
-        <div  className="question" >
+        <div className="question">
           <p>{currentQ.text}</p>
-          <img className="image-question" src={currentQ.imageURL} alt="Sign Language Image" />
+          <img
+            className="image-question"
+            src={currentQ.imageURL}
+            alt="Sign Language Image"
+          />
           <ul className="textoptiongrid">
             {currentQ.options.map((option, index) => (
-              <li  key={index}>
-                <button className="text-option"
+              <li key={index}>
+                <button
+                  className={`text-option
+                  ${userAnswer !== null && option.correct && "correct-option"}
+                  ${
+                    userAnswer !== null && !option.correct && "incorrect-option"
+                  }
+                `}
                   onClick={() => handleAnswer(option.correct)}
                   disabled={userAnswer !== null}
                 >
@@ -340,7 +359,11 @@ export default function Quiz1() {
         {currentQuestion < finalArray.length ? (
           <div className="nextquestionbutton">
             {renderQuestion()}
-            <button className="nextques" onClick={handleNextQuestion} disabled={userAnswer === null}>
+            <button
+              className="nextques"
+              onClick={handleNextQuestion}
+              disabled={userAnswer === null}
+            >
               Next Question
             </button>
           </div>
@@ -359,4 +382,3 @@ export default function Quiz1() {
     </>
   );
 }
-
