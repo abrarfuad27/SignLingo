@@ -320,6 +320,12 @@ export default function Quiz1() {
     setCorrectOption(null);
   };
 
+  const speechSynthesis= (speech_question) => {
+    const synth = window.speechSynthesis;
+    const utterThis = new SpeechSynthesisUtterance(speech_question);
+    synth.speak(utterThis);
+  };
+
   const renderQuestion = () => {
     const currentQ = finalArray[currentQuestion];
 
@@ -327,6 +333,7 @@ export default function Quiz1() {
       return (
         <div className="question">
           <p>{currentQ.text}</p>
+          {speechSynthesis(currentQ.text)}
           <ul className="imageoptiongrid">
             {currentQ.options.map((option, index) => (
               <li key={index}>
@@ -353,6 +360,7 @@ export default function Quiz1() {
       return (
         <div className="question">
           <p>{currentQ.text}</p>
+          {speechSynthesis(currentQ.text)}
           <img
             className="image-question"
             src={currentQ.imageURL}
