@@ -14,21 +14,21 @@ export default function Quiz3() {
   );
 }
 
-function Helper() {
-  const [data, setData] = useState(null);
+// function Helper() {
+//   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('/api/data');
-      setData(result.data);
-    };
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const result = await axios('/api/data');
+//       setData(result.data);
+//     };
 
-    fetchData();
-  }, []);
+//     fetchData();
+//   }, []);
 
-  return (
-    <div>
-      {data && <div>{data.key}</div>}
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       {data && <div>{data.key}</div>}
+//     </div>
+//   );
+// }

@@ -7,7 +7,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
-@app.route('/api/data', methods=['GET'])
+@app.route('/predict', methods=['GET'])
 def get_data():
     # Load the image using PIL
     img_path = './photo.jpg'
@@ -22,10 +22,12 @@ def get_data():
 
 
 # load model
-model = tf.keras.models.load_model("Model_2_epoch")
+# @app.route('/getmodel', methods=['GET'])
+# def get_model():
+model = tf.keras.models.load_model("try_model.h5")
 model.compile(loss='categorical_crossentropy',
-              optimizer=Adam(learning_rate=1e-4),
-              metrics=['accuracy'])
+            optimizer=Adam(learning_rate=1e-4),
+            metrics=['accuracy'])
 
 class Model():
 
