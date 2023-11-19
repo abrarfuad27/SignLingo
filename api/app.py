@@ -17,7 +17,7 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
-    activities = db.Column(db.JSON, default=[])
+    activities = db.Column(db.JSON, default=list)
 
 
 
@@ -57,6 +57,7 @@ def update():
     data = request.get_json()
     username = data.get('username')
     percentage = data.get('percentage')
+    print(username,percentage)
     user = User.query.filter_by(username=username).first()
     if user:
         user.activities.append(percentage)
