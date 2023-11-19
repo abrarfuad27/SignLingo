@@ -324,7 +324,7 @@ const questions = [
     answers: [
       {image: "A", correct: true },
       {image: "S", correct: false },
-      {image: "1", correct: false },
+      {image: "Q", correct: false },
       {image: "T", correct: false },
     ]
   },
@@ -335,7 +335,7 @@ const questions = [
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/B.jpg",
     answers: [
-      {image: "1", correct: false },
+      {image: "W", correct: false },
       {image: "P", correct: false },
       {image: "B", correct: true },
       {image: "Q", correct: false },
@@ -350,7 +350,7 @@ const questions = [
     answers: [
       {image: "M", correct: false },
       {image: "S", correct: false },
-      {image: "1", correct: false },
+      {image: "T", correct: false },
       {image: "C", correct: true },
     ]
   },
@@ -377,7 +377,7 @@ const questions = [
       {image: "G", correct: false },
       {image: "S", correct: false },
       {image: "E", correct: true },
-      {image: "3", correct: false },
+      {image: "Y", correct: false },
     ]
   },
 
@@ -441,8 +441,8 @@ const questions = [
     answers: [
       {image: "J", correct: true },
       {image: "S", correct: false },
-      {image: "9", correct: false },
-      {image: "3", correct: false },
+      {image: "O", correct: false },
+      {image: "B", correct: false },
     ]
   },
 
@@ -452,7 +452,7 @@ const questions = [
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/K.jpg",
     answers: [
-      {image: "6", correct: false },
+      {image: "R", correct: false },
       {image: "S", correct: false },
       {image: "E", correct: false },
       {image: "K", correct: true },
@@ -480,7 +480,7 @@ const questions = [
     answers: [
       {image: "M", correct: false },
       {image: "S", correct: false },
-      {image: "1", correct: false },
+      {image: "K", correct: false },
       {image: "C", correct: true },
     ]
   },
@@ -521,7 +521,7 @@ const questions = [
       {image: "P", correct: true },
       {image: "S", correct: false },
       {image: "V", correct: false },
-      {image: "7", correct: false },
+      {image: "F", correct: false },
     ]
   },
 
@@ -534,7 +534,7 @@ const questions = [
       {image: "P", correct: false },
       {image: "N", correct: false },
       {image: "Q", correct: true },
-      {image: "9", correct: false },
+      {image: "X", correct: false },
     ]
   },
 
@@ -560,7 +560,7 @@ const questions = [
       {image: "Y", correct: false },
       {image: "S", correct: true },
       {image: "I", correct: false },
-      {image: "3", correct: false },
+      {image: "C", correct: false },
     ]
   },
 
@@ -571,9 +571,9 @@ const questions = [
     imageurl: "/assets/alphabet_image/T.jpg",
     answers: [
       {image: "B", correct: false },
-      {image: "0", correct: false },
+      {image: "N", correct: false },
       {image: "T", correct: true },
-      {image: "3", correct: false },
+      {image: "E", correct: false },
     ]
   },
 
@@ -599,7 +599,7 @@ const questions = [
       {image: "Z", correct: false },
       {image: "V", correct: true },
       {image: "P", correct: false },
-      {image: "3", correct: false },
+      {image: "M", correct: false },
     ]
   },
 
@@ -610,8 +610,8 @@ const questions = [
     imageurl: "/assets/alphabet_image/W.jpg",
     answers: [
       {image: "W", correct: true },
-      {image: "0", correct: false },
-      {image: "2", correct: false },
+      {image: "U", correct: false },
+      {image: "Z", correct: false },
       {image: "I", correct: false },
     ]
   },
@@ -650,7 +650,7 @@ const questions = [
     answers: [
       {image: "Z", correct: true },
       {image: "H", correct: false },
-      {image: "9", correct: false },
+      {image: "L", correct: false },
       {image: "C", correct: false },
     ],
   },
