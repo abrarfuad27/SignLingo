@@ -692,6 +692,8 @@ export default function Quiz2() {
   const [correctOption, setCorrectOption] = useState(null);
 
   const handleAnswer = (answer) => {
+    const sound = new Audio(answer? '/assets/sounds/correct_answer.mp3' : '/assets/sounds/wrong_answer.mp3');
+    sound.play();
     setUserAnswer(answer);
 
     if (answer) {
