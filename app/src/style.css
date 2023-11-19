@@ -47,6 +47,7 @@ body {
   margin-top: 2rem;
 }
 
+
 .learn-button,
 .quiz-button {
   display: flex;
@@ -56,7 +57,7 @@ body {
   color: white;
   font-size: large;
   font-weight: 800;
-  width: 12rem;
+  width: 10rem;
   margin: 8px;
   height: 6rem;
   padding: 0.5rem;
@@ -71,6 +72,8 @@ body {
     transform: scale(1.1);
   }
 }
+
+
 
 .learn-container {
   display: flex;
@@ -226,4 +229,9 @@ ul {
     background-color: #214e24; /* Darker green on hover */
     transform: scale(1.02);
   }
+}
+
+.hbuttons{
+  display: flex;
+  flex-direction: row;
 }

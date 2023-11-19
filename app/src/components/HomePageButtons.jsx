@@ -7,12 +7,14 @@ export default function HomePageButtons() {
     <div className="homepage-buttons">
       <div className="center-content">
         <img src="/assets/penguinslay.gif" alt="Animated GIF" />
-        <Link to="/learn" className="learn-button">
-          Learn
-        </Link>
-        <Link to="/quiz" className="quiz-button">
-          Test your knowledge!
-        </Link>
+        <div className="hbuttons">
+          <Link to="/learn" className="learn-button">
+            Learn
+          </Link>
+          <Link to="/quiz" className="quiz-button">
+            Test your knowledge!
+          </Link>
+        </div>
       </div>
     </div>
   );

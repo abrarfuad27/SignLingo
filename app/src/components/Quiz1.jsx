@@ -266,7 +266,6 @@ export default function Quiz1() {
     if (answer) {
       setScore(score + 1);
     }
-    handleNextQuestion();
   };
 
   const handleNextQuestion = () => {
