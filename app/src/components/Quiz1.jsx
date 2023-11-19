@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import { userContext } from "../UserContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Confetti from "react-confetti"
+import Confetti from "react-confetti";
 
 const questions = [
   {
@@ -189,7 +189,7 @@ const questions = [
     options: [
       { image: "8", correct: true },
       { image: "10", correct: false },
-      { image: "1", correct: true },
+      { image: "1", correct: false },
       { image: "5", correct: false },
     ],
   },
@@ -278,15 +278,18 @@ export default function Quiz1() {
 
   useEffect(() => {
     if (userInfo.username && currentQuestion === finalArray.length) {
-      const updateRecords = async () =>{
+      const updateRecords = async () => {
         try {
-          const userData = {username: userInfo.username, percentage : (score/finalArray.length * 100)};
+          const userData = {
+            username: userInfo.username,
+            percentage: (score / finalArray.length) * 100,
+          };
           const response = await axios.post(
             "http://127.0.0.1:5000/api/update",
             userData
           );
-          console.log(response.data.message)
-        } catch (err){
+          console.log(response.data.message);
+        } catch (err) {
           console.log(`Error->${err}`);
         }
       };
@@ -310,7 +313,7 @@ export default function Quiz1() {
   };
 
   const handleNextQuestion = () => {
-    console.log(userInfo.username)
+    console.log(userInfo.username);
     // Move to the next question if the user answered correctly
     setCurrentQuestion(currentQuestion + 1);
     setUserAnswer(null);
