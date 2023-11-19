@@ -1,6 +1,7 @@
 import React, { useState, Component } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import Confetti from "react-confetti"
 
 const questions = [
   {
@@ -790,6 +791,7 @@ export default function Quiz2() {
           </div>
         ) : (
           <div>
+            < Confetti/>
             <p>Quiz Completed!</p>
             <p>
               Your Score: {score}/{finalArray.length}
