@@ -59,6 +59,38 @@ body {
 
 }
 
+.continue-button {
+  width: 5rem;
+  border-radius: 10px;
+  border: none;
+  height: 3rem;
+  color: #196c7b;
+  background-color: #f5dae7;
+  cursor: pointer;
+  transition: background-color 0.3s,
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */
+  &:hover {
+    background-color: #ff219b; /* Darker green on hover */
+    transform: scale(1.02);
+  }
+}
+
+.signup-button {
+  width: 5rem;
+  border-radius: 10px;
+  border: none;
+  height: 3rem;
+  color: #196c7b;
+  background-color: #f5dae7;
+  cursor: pointer;
+  transition: background-color 0.3s,
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */
+  &:hover {
+    background-color: #ff219b; /* Darker green on hover */
+    transform: scale(1.02);
+  }
+}
+
 .learn-button,
 .quiz-button {
   display: flex;

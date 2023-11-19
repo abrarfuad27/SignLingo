@@ -62,7 +62,7 @@ export default function LoginPage() {
           required
           onChange={(ev) => setPassword(ev.target.value)}
         />
-        <button type="submit">Continue</button>
+        <button class="continue-button" type="submit">Continue</button>
       </form>
       <p>
         Don't have an account? Create <Link to="/signup">here</Link>

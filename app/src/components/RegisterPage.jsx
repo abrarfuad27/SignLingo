@@ -91,7 +91,7 @@ export default function RegisterPage() {
           required
           onChange={(ev) => setConfirmPassword(ev.target.value)}
         ></input>
-        <button type="submit">Sign Up</button>
+        <button class="signup-button" type="submit">Sign Up</button>
       </form>
     </div>
   );
