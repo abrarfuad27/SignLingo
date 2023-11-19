@@ -523,6 +523,136 @@ const questions = [
     ]
   },
 
+  {
+    id: 42,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/Q.jpg",
+    answers: [
+      {image: "P", correct: false },
+      {image: "N", correct: false },
+      {image: "Q", correct: true },
+      {image: "9", correct: false },
+    ]
+  },
+
+  {
+    id: 43,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/R.jpg",
+    answers: [
+      {image: "U", correct: false },
+      {image: "Q", correct: false },
+      {image: "T", correct: false },
+      {image: "R", correct: true },
+    ]
+  },
+
+  {
+    id: 44,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/S.jpg",
+    answers: [
+      {image: "Y", correct: false },
+      {image: "S", correct: true },
+      {image: "I", correct: false },
+      {image: "3", correct: false },
+    ]
+  },
+
+  {
+    id: 45,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/T.jpg",
+    answers: [
+      {image: "B", correct: false },
+      {image: "0", correct: false },
+      {image: "T", correct: true },
+      {image: "3", correct: false },
+    ]
+  },
+
+  {
+    id: 46,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/U.jpg",
+    answers: [
+      {image: "F", correct: false },
+      {image: "S", correct: false },
+      {image: "U", correct: true },
+      {image: "C", correct: false },
+    ]
+  },
+
+  {
+    id: 47,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/V.jpg",
+    answers: [
+      {image: "Z", correct: false },
+      {image: "V", correct: true },
+      {image: "P", correct: false },
+      {image: "3", correct: false },
+    ]
+  },
+
+  {
+    id: 48,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/W.jpg",
+    answers: [
+      {image: "W", correct: true },
+      {image: "0", correct: false },
+      {image: "2", correct: false },
+      {image: "I", correct: false },
+    ]
+  },
+
+  {
+    id: 49,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/X.jpg",
+    answers: [
+      {image: "L", correct: false },
+      {image: "P", correct: false },
+      {image: "X", correct: true },
+      {image: "C", correct: false },
+    ]
+  },
+
+  {
+    id: 50,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/Y.jpg",
+    answers: [
+      {image: "U", correct: false },
+      {image: "Q", correct: false },
+      {image: "Y", correct: true },
+      {image: "R", correct: false },
+    ]
+  },
+
+  {
+    id: 51,
+    type: "imagetotext",
+    question: "What is shown in the image?",
+    imageurl: "/assets/alphabet_image/Z.jpg",
+    answers: [
+      {image: "Z", correct: true },
+      {image: "H", correct: false },
+      {image: "9", correct: false },
+      {image: "C", correct: false },
+    ]
+  }
+
 ]
 export default function Quiz2() {
   return <>Quiz2</>;
