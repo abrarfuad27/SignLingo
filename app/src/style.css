@@ -42,6 +42,13 @@ body {
   height: 6rem;
 }
 
+.user-logo {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+
+}
+
 .homepage-buttons {
   display: flex;
   flex-direction: row;
@@ -49,6 +56,7 @@ body {
   align-items: center;
   gap: 4rem;
   margin-top: 2rem;
+
 }
 
 .learn-button,
@@ -207,6 +215,7 @@ body {
 .image-question {
   width: 6rem;
   height: 6rem;
+  border-radius: 0.2rem;
 }
 
 .textoptiongrid {
@@ -220,6 +229,7 @@ body {
 .text-option {
   width: 4rem;
   height: 3rem;
+  border-radius: 0.5rem;
 }
 
 .question {

@@ -2,6 +2,7 @@ import React, { useState, Component, useContext, useEffect } from "react";
 import Navbar from "./Navbar";
 import { userContext } from "../UserContext";
 import { Link } from "react-router-dom";
+import Confetti from "react-confetti"
 import axios from "axios";
 
 const questions = [
@@ -375,11 +376,11 @@ const questions = [
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/E.jpg",
     answers: [
-      { image: "G", correct: false },
-      { image: "S", correct: false },
-      { image: "E", correct: true },
-      { image: "3", correct: false },
-    ],
+      {image: "G", correct: false },
+      {image: "S", correct: false },
+      {image: "E", correct: true },
+      {image: "3", correct: false },
+    ]
   },
 
   {
@@ -609,11 +610,11 @@ const questions = [
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/W.jpg",
     answers: [
-      { image: "W", correct: true },
-      { image: "0", correct: false },
-      { image: "2", correct: false },
-      { image: "I", correct: false },
-    ],
+      {image: "W", correct: true },
+      {image: "0", correct: false },
+      {image: "2", correct: false },
+      {image: "I", correct: false },
+    ]
   },
 
   {
@@ -713,6 +714,8 @@ export default function Quiz2() {
   }, [currentQuestion]);
 
   const handleAnswer = (answer) => {
+const sound = new Audio(answer? '/assets/sounds/correct_answer.mp3' : '/assets/sounds/wrong_answer.mp3');
+    sound.play();
     setUserAnswer(answer);
 
     if (answer) {
@@ -809,6 +812,7 @@ export default function Quiz2() {
           </div>
         ) : (
           <div>
+< Confetti/>
             <p>Quiz Completed!</p>
             <p>
               Your Score: {score}/{finalArray.length}
