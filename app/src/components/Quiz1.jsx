@@ -328,7 +328,7 @@ export default function Quiz1() {
         {currentQuestion < questions.length ? (
           <div className="nextquestionbutton">
             {renderQuestion()}
-            <button onClick={handleNextQuestion} disabled={userAnswer === null}>
+            <button className="nextques" onClick={handleNextQuestion} disabled={userAnswer === null}>
               Next Question
             </button>
           </div>
