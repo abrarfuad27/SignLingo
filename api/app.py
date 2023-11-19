@@ -1,4 +1,5 @@
-from flask import Flask, jsonify, render_template, Response
+from flask import Flask, jsonify, render_template, request
+from flask_cors import CORS
 import numpy as np
 import tensorflow as tf
 from keras.optimizers import Adam
@@ -6,12 +7,48 @@ from PIL import Image
 
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
-@app.route('/predict', methods=['GET'])
-def get_data():
+
+@app.route('/', methods=['OPTIONS'])
+def handle_options():
+    response = app.response_class(response="", status=200)
+    response.headers['Access-Control-Allow-Origin'] = '*'  # Replace '*' with your frontend URL
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    response.headers['Access-Control-Allow-Methods'] = 'OPTIONS, POST'
+    return response
+
+@app.route('/api/photo', methods=['POST'])
+def receive_photo():
+    try:
+        if 'file' not in request.files:
+            return jsonify({'message': 'No file part'}), 400
+
+        file = request.files['file']
+
+        if file.filename == '':
+            return jsonify({'message': 'No selected file'}), 400
+        
+        json_data = get_data(file)
+
+        return json_data
+    except Exception as e:
+        return jsonify({'message': f'Error: {str(e)}'}), 500
+
+
+#@app.route('/api/data', methods=[''])
+def get_data(img):
     # Load the image using PIL
-    img_path = './photo.jpg'
+    # load model
+    model = tf.keras.models.load_model("try_model.h5")
+    model.compile(loss='categorical_crossentropy',
+                optimizer=Adam(learning_rate=1e-4),
+                metrics=['accuracy'])
+
+    img_path = img
     img = Image.open(img_path)
+
+    # Create an instance of the Model class
 
     # Call the preprocess_image function
     letter = Model.preprocess_image(img, model)
@@ -19,15 +56,6 @@ def get_data():
     data = {"result": letter}  # Replace with your actual data
     return jsonify(data)
 
-
-
-# load model
-# @app.route('/getmodel', methods=['GET'])
-# def get_model():
-model = tf.keras.models.load_model("try_model.h5")
-model.compile(loss='categorical_crossentropy',
-            optimizer=Adam(learning_rate=1e-4),
-            metrics=['accuracy'])
 
 class Model():
 
@@ -56,4 +84,4 @@ class Model():
         return predicted_label
 
 if __name__ == '__main__':
-    get_data()
+    app.run(debug=True)
