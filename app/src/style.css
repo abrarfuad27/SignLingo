@@ -6,7 +6,7 @@
   font-family: "Space Mono", monospace;
 }
 body {
-  background-color: antiquewhite;
+  background-color: #f5dae7;
 }
 
 .navbar {
@@ -42,9 +42,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 4rem;
-  margin-top: 10rem;
+  margin-top: 2rem;
 }
+
 
 .learn-button,
 .quiz-button {
@@ -55,24 +57,27 @@ body {
   color: white;
   font-size: large;
   font-weight: 800;
-  width: 12rem;
+  width: 10rem;
+  margin: 8px;
   height: 6rem;
   padding: 0.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
   border: none;
-  background-color: #2e6b31; /* Green background color */
+  background-color: #196c7b; /* Blue background color */
   transition: background-color 0.3s,
     transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */
   &:hover {
-    background-color: #214e24; /* Darker green on hover */
+    background-color: #0b5e60; /* Darker blue on hover */
     transform: scale(1.1);
   }
 }
 
+
+
 .learn-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -143,11 +148,11 @@ body {
   margin-top: 2rem;
   border-radius: 0.5rem;
   border: none;
-  background-color: #2e6b31; /* Green background color */
+  background-color: #196c7b; /* Blue background color */
   transition: background-color 0.3s,
     transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */
   &:hover {
-    background-color: #214e24; /* Darker green on hover */
+    background-color: #0b5e60; /* Darker blue on hover */
     transform: scale(1.02);
   }
 }
@@ -224,4 +229,9 @@ ul {
     background-color: #214e24; /* Darker green on hover */
     transform: scale(1.02);
   }
+}
+
+.hbuttons{
+  display: flex;
+  flex-direction: row;
 }
