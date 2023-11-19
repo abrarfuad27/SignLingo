@@ -683,7 +683,7 @@ const randomlySelectedQuestions = questions.reduce((acc, element, id) => {
 
 shuffleArray(randomlySelectedQuestions);
 // Take the first 26 elements
-const finalArray = randomlySelectedQuestions.slice(0, 10);
+const finalArray = randomlySelectedQuestions.slice(0, 5);
 
 export default function Quiz2() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
