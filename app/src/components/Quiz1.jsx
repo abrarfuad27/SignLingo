@@ -2,7 +2,7 @@ import React, { useState, Component } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
-const questions = [
+const questions = [ 
   {
     id: 1,
     type: "textToImage",
@@ -90,8 +90,8 @@ const questions = [
     options: [
       { image: "/assets/alphabet_image/6.jpg", correct: false },
       { image: "/assets/alphabet_image/8.jpg", correct: true },
-      { image: "/assets/alphabet_image/9.jpg", correct: false },
-      { image: "/assets/alphabet_image/3.jpg", correct: false },
+      { image: "/assets/alphabet_image/9.jpg", correct: true },
+      { image: "/assets/alphabet_image/3.jpg", correct: true },
     ],
   },
   {
@@ -208,7 +208,7 @@ const questions = [
     options: [
       { image: "8", correct: true },
       { image: "10", correct: false },
-      { image: "1", correct: false },
+      { image: "1", correct: true },
       { image: "5", correct: false },
     ],
   },
@@ -238,52 +238,58 @@ const questions = [
   },
 ];
 
+const randomlySelectedQuestions = questions.map((element, id) => {
+  // Process every other element
+  if (id % 2 === 0) {
+    // Use Math.random() to generate a random number between 0 and 1
+    const randomNumber = Math.random();
+
+    // If the random number is less than 0.5, add the first element to the new array; otherwise, add the second element
+    return randomNumber < 0.5 ? element : questions[id + 1];
+  } else {
+    // For elements at odd indices, return undefined (or handle differently if needed)
+    return undefined;
+  }
+});
+
+// Remove undefined elements and take the first 10 elements
+const finalArray = randomlySelectedQuestions.filter(Boolean).slice(0, 10);
+
 export default function Quiz1() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswer, setUserAnswer] = useState(null);
   const [score, setScore] = useState(0);
-  const [correctOption, setCorrectOption] = useState(null);
-  const [currentIndex,setCurrentIndex] = useState(null)
 
-  const handleAnswer = (answer,index) => {
+  const handleAnswer = (answer) => {
     setUserAnswer(answer);
 
     if (answer) {
       setScore(score + 1);
     }
-    setCorrectOption(answer);
-    setCurrentIndex(index);
+    handleNextQuestion();
   };
 
   const handleNextQuestion = () => {
     // Move to the next question if the user answered correctly
     setCurrentQuestion(currentQuestion + 1);
     setUserAnswer(null);
-    setCorrectOption(null);
-    setCurrentIndex(null);
   };
 
   const renderQuestion = () => {
-    const currentQ = questions[currentQuestion];
+    const currentQ = finalArray[currentQuestion];
 
     if (currentQ.type === "textToImage") {
       return (
-        <div className="question">
+        <div   className="question">
           <p>{currentQ.text}</p>
           <ul className="imageoptiongrid">
             {currentQ.options.map((option, index) => (
               <li key={index}>
                 <button
-                
-                
-                  onClick={() => handleAnswer(option.correct,index)}
+                  onClick={() => handleAnswer(option.correct)}
                   disabled={userAnswer !== null}
                 >
-                  <img
-                    className="image-options"
-                    src={option.image}
-                    alt="option"
-                  />
+                  <img className="image-options" src={option.image} alt="option" />
                 </button>
               </li>
             ))}
@@ -292,19 +298,14 @@ export default function Quiz1() {
       );
     } else if (currentQ.type === "imageToText") {
       return (
-        <div className="question">
+        <div  className="question" >
           <p>{currentQ.text}</p>
-          <img
-            className="image-question"
-            src={currentQ.imageURL}
-            alt="Sign Language Image"
-          />
+          <img className="image-question" src={currentQ.imageURL} alt="Sign Language Image" />
           <ul className="textoptiongrid">
             {currentQ.options.map((option, index) => (
-              <li key={index}>
-                <button
-                  className="text-option "
-                  onClick={() => handleAnswer(option.correct,index)}
+              <li  key={index}>
+                <button className="text-option"
+                  onClick={() => handleAnswer(option.correct)}
                   disabled={userAnswer !== null}
                 >
                   {option.image}
@@ -327,7 +328,7 @@ export default function Quiz1() {
         {currentQuestion < questions.length ? (
           <div className="nextquestionbutton">
             {renderQuestion()}
-            <button className="nextques" onClick={handleNextQuestion} disabled={userAnswer === null}>
+            <button onClick={handleNextQuestion} disabled={userAnswer === null}>
               Next Question
             </button>
           </div>
