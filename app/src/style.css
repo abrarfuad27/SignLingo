@@ -269,3 +269,15 @@ ul {
   display: flex;
   flex-direction: row;
 }
+
+.videobuttons{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem
+}
+
+.webcam{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
