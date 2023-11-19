@@ -1,8 +1,10 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const questions = [
   {
-    id: 0,
+    id: 1,
     type: "texttoimage",
     question: "What is A in sign language?",
     answers: [
@@ -14,7 +16,7 @@ const questions = [
   },
 
   {
-    id: 1,
+    id: 3,
     type: "texttoimage",
     question: "What is B in sign language?",
     answers: [
@@ -26,7 +28,7 @@ const questions = [
   },
 
   {
-    id: 2,
+    id: 5,
     type: "texttoimage",
     question: "What is C in sign language?",
     answers: [
@@ -38,7 +40,7 @@ const questions = [
   },
 
   {
-    id: 3,
+    id: 7,
     type: "texttoimage",
     question: "What is D in sign language?",
     answers: [
@@ -50,7 +52,7 @@ const questions = [
   },
 
   {
-    id: 4,
+    id: 9,
     type: "texttoimage",
     question: "What is E in sign language?",
     answers: [
@@ -62,7 +64,7 @@ const questions = [
   },
 
   {
-    id: 5,
+    id: 11,
     type: "texttoimage",
     question: "What is F in sign language?",
     answers: [
@@ -74,7 +76,7 @@ const questions = [
   },
   
   {
-    id: 6,
+    id: 13,
     type: "texttoimage",
     question: "What is G in sign language?",
     answers: [
@@ -86,7 +88,7 @@ const questions = [
   },
 
   {
-    id: 7,
+    id: 15,
     type: "texttoimage",
     question: "What is H in sign language?",
     answers: [
@@ -98,7 +100,7 @@ const questions = [
   },
 
   {
-    id: 8,
+    id: 17,
     type: "texttoimage",
     question: "What is I in sign language?",
     answers: [
@@ -110,7 +112,7 @@ const questions = [
   },
 
   {
-    id: 9,
+    id: 19,
     type: "texttoimage",
     question: "What is J in sign language?",
     answers: [
@@ -122,7 +124,7 @@ const questions = [
   },
 
   {
-    id: 10,
+    id: 21,
     type: "texttoimage",
     question: "What is K in sign language?",
     answers: [
@@ -134,7 +136,7 @@ const questions = [
   },
 
   {
-    id: 11,
+    id: 23,
     type: "texttoimage",
     question: "What is L in sign language?",
     answers: [
@@ -146,7 +148,7 @@ const questions = [
   },
 
   {
-    id: 12,
+    id: 25,
     type: "texttoimage",
     question: "What is M in sign language?",
     answers: [
@@ -158,7 +160,7 @@ const questions = [
   },
 
   {
-    id: 13,
+    id: 27,
     type: "texttoimage",
     question: "What is N in sign language?",
     answers: [
@@ -171,7 +173,7 @@ const questions = [
 
 
   {
-    id: 14,
+    id: 29,
     type: "texttoimage",
     question: "What is O in sign language?",
     answers: [
@@ -183,7 +185,7 @@ const questions = [
   },
 
   {
-    id: 15,
+    id: 31,
     type: "texttoimage",
     question: "What is P in sign language?",
     answers: [
@@ -195,7 +197,7 @@ const questions = [
   },
 
   {
-    id: 16,
+    id: 33,
     type: "texttoimage",
     question: "What is Q in sign language?",
     answers: [
@@ -207,7 +209,7 @@ const questions = [
   },
 
   {
-    id: 17,
+    id: 35,
     type: "texttoimage",
     question: "What is R in sign language?",
     answers: [
@@ -219,7 +221,7 @@ const questions = [
   },
 
   {
-    id: 18,
+    id: 37,
     type: "texttoimage",
     question: "What is S in sign language?",
     answers: [
@@ -231,7 +233,7 @@ const questions = [
   },
 
   {
-    id: 19,
+    id: 39,
     type: "texttoimage",
     question: "What is T in sign language?",
     answers: [
@@ -243,7 +245,7 @@ const questions = [
   },
 
   {
-    id: 20,
+    id: 41,
     type: "texttoimage",
     question: "What is U in sign language?",
     answers: [
@@ -255,7 +257,7 @@ const questions = [
   },
 
   {
-    id: 21,
+    id: 43,
     type: "texttoimage",
     question: "What is V in sign language?",
     answers: [
@@ -267,7 +269,7 @@ const questions = [
   },
 
   {
-    id: 22,
+    id: 45,
     type: "texttoimage",
     question: "What is W in sign language?",
     answers: [
@@ -279,7 +281,7 @@ const questions = [
   },
 
   {
-    id: 23,
+    id: 47,
     type: "texttoimage",
     question: "What is X in sign language?",
     answers: [
@@ -291,7 +293,7 @@ const questions = [
   },
 
   {
-    id: 24,
+    id: 49,
     type: "texttoimage",
     question: "What is Y in sign language?",
     answers: [
@@ -303,7 +305,7 @@ const questions = [
   },
 
   {
-    id: 25,
+    id: 51,
     type: "texttoimage",
     question: "What is Z in sign language?",
     answers: [
@@ -315,7 +317,7 @@ const questions = [
   },
 
   {
-    id: 26,
+    id: 2,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/A.jpg",
@@ -328,7 +330,7 @@ const questions = [
   },
 
   {
-    id: 27,
+    id: 4,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/B.jpg",
@@ -341,7 +343,7 @@ const questions = [
   },
 
   {
-    id: 28,
+    id: 6,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/C.jpg",
@@ -354,7 +356,7 @@ const questions = [
   },
 
   {
-    id: 29,
+    id: 8,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/D.jpg",
@@ -367,7 +369,7 @@ const questions = [
   },
 
   {
-    id: 30,
+    id: 10,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/E.jpg",
@@ -380,7 +382,7 @@ const questions = [
   },
 
   {
-    id: 31,
+    id: 12,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/F.jpg",
@@ -393,7 +395,7 @@ const questions = [
   },
   
   {
-    id: 32,
+    id: 14,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/G.jpg",
@@ -406,7 +408,7 @@ const questions = [
   },
 
   {
-    id: 33,
+    id: 16,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/H.jpg",
@@ -419,7 +421,7 @@ const questions = [
   },
 
   {
-    id: 34,
+    id: 18,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/I.jpg",
@@ -427,12 +429,12 @@ const questions = [
       {image: "Y", correct: false },
       {image: "S", correct: false },
       {image: "I", correct: true },
-      {image: "3", correct: false },
+      {image: "B", correct: false },
     ]
   },
 
   {
-    id: 35,
+    id: 20,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/J.jpg",
@@ -445,7 +447,7 @@ const questions = [
   },
 
   {
-    id: 36,
+    id: 22,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/K.jpg",
@@ -458,7 +460,7 @@ const questions = [
   },
 
   {
-    id: 37,
+    id: 24,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/L.jpg",
@@ -471,7 +473,7 @@ const questions = [
   },
 
   {
-    id: 38,
+    id: 26,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/M.jpg",
@@ -484,7 +486,7 @@ const questions = [
   },
 
   {
-    id: 39,
+    id: 28,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/N.jpg",
@@ -498,7 +500,7 @@ const questions = [
 
 
   {
-    id: 40,
+    id: 30,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/O.jpg",
@@ -511,7 +513,7 @@ const questions = [
   },
 
   {
-    id: 41,
+    id: 32,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/P.jpg",
@@ -524,7 +526,7 @@ const questions = [
   },
 
   {
-    id: 42,
+    id: 34,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/Q.jpg",
@@ -537,7 +539,7 @@ const questions = [
   },
 
   {
-    id: 43,
+    id: 36,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/R.jpg",
@@ -550,7 +552,7 @@ const questions = [
   },
 
   {
-    id: 44,
+    id: 38,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/S.jpg",
@@ -563,7 +565,7 @@ const questions = [
   },
 
   {
-    id: 45,
+    id: 40,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/T.jpg",
@@ -576,7 +578,7 @@ const questions = [
   },
 
   {
-    id: 46,
+    id: 42,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/U.jpg",
@@ -589,7 +591,7 @@ const questions = [
   },
 
   {
-    id: 47,
+    id: 44,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/V.jpg",
@@ -602,7 +604,7 @@ const questions = [
   },
 
   {
-    id: 48,
+    id: 46,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/W.jpg",
@@ -615,7 +617,7 @@ const questions = [
   },
 
   {
-    id: 49,
+    id: 48,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/X.jpg",
@@ -641,7 +643,7 @@ const questions = [
   },
 
   {
-    id: 51,
+    id: 52,
     type: "imagetotext",
     question: "What is shown in the image?",
     imageurl: "/assets/alphabet_image/Z.jpg",
@@ -650,10 +652,153 @@ const questions = [
       {image: "H", correct: false },
       {image: "9", correct: false },
       {image: "C", correct: false },
-    ]
+    ],
+  },
+
+];
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+};
+
+const randomlySelectedQuestions = questions.reduce((acc, element, id) => {
+  // Process every other element
+  if (id % 2 === 0) {
+    // Use Math.random() to generate a random number between 0 and 1
+    const randomNumber = Math.random();
+
+    // If the random number is less than 0.5, add the first element to the new array; otherwise, add the second element
+    if (randomNumber < 0.5) {
+      acc.push(element);
+    } else {
+      acc.push(questions[id+1]);
+    }
   }
 
-]
+  return acc;
+}, []);
+
+shuffleArray(randomlySelectedQuestions);
+// Take the first 26 elements
+const finalArray = randomlySelectedQuestions.slice(0, 26);
+
 export default function Quiz2() {
-  return <>Quiz2</>;
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [userAnswer, setUserAnswer] = useState(null);
+  const [score, setScore] = useState(0);
+  const [correctOption, setCorrectOption] = useState(null);
+
+  const handleAnswer = (answer) => {
+    setUserAnswer(answer);
+
+    if (answer) {
+      setScore(score + 1);
+    }
+    setCorrectOption(answer.correct);
+  };
+
+  const handleNextQuestion = () => {
+    // Move to the next question if the user answered correctly
+    setCurrentQuestion(currentQuestion + 1);
+    setUserAnswer(null);
+    setCorrectOption(null);
+  };
+
+  const renderQuestion = () => {
+    const currentQ = finalArray[currentQuestion];
+
+    if (currentQ.type === "texttoimage") {
+      return (
+        <div className="question">
+          <p>{currentQ.question}</p>
+          <ul className="imageoptiongrid">
+            {currentQ.answers.map((option, index) => (
+              <li key={index}>
+                <button
+                  className={`
+                ${userAnswer !== null && option.correct && "correct-option"}
+                ${userAnswer !== null && !option.correct && "incorrect-option"}
+              `}
+                  onClick={() => handleAnswer(option.correct)}
+                  disabled={userAnswer !== null}
+                >
+                  <img
+                    className="image-options"
+                    src={option.image}
+                    alt="option"
+                  />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    } else if (currentQ.type === "imagetotext") {
+      return (
+        <div className="question">
+          <p>{currentQ.question}</p>
+          <img
+            className="image-question"
+            src={currentQ.imageurl}
+            alt="Sign Language Image"
+          />
+          <ul className="textoptiongrid">
+            {currentQ.answers.map((option, index) => (
+              <li key={index}>
+                <button
+                  className={`text-option
+                  ${userAnswer !== null && option.correct && "correct-option"}
+                  ${
+                    userAnswer !== null && !option.correct && "incorrect-option"
+                  }
+                `}
+                  onClick={() => handleAnswer(option.correct)}
+                  disabled={userAnswer !== null}
+                >
+                  {option.image}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <>
+      <Navbar />
+      <div className="quiz2page-container">
+        <h1>Quiz 2 (Alphabets)</h1>
+        {currentQuestion < finalArray.length ? (
+          <div className="nextquestionbutton">
+            {renderQuestion()}
+            <button
+              className="nextques"
+              onClick={handleNextQuestion}
+              disabled={userAnswer === null}
+            >
+              Next Question
+            </button>
+          </div>
+        ) : (
+          <div>
+            <p>Quiz Completed!</p>
+            <p>
+              Your Score: {score}/{finalArray.length}
+            </p>
+            <Link to="/quiz" className="quiz2finish-button">
+              Back to Quiz Page
+            </Link>
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
+
