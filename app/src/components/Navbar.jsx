@@ -13,6 +13,15 @@ export default function Navbar() {
     }
   }, []);
 
+  function signout() {
+    sessionStorage.clear();
+    setUserInfo({
+      username: "",
+      email: "",
+      token: "",
+    });
+  }
+
   return (
     <Link to="/">
       <nav className="navbar">
@@ -30,6 +39,8 @@ export default function Navbar() {
               <Link className="navbar-item" to="/records">
                 {`Hi, ${userInfo.username}`}
               </Link>
+              <button onClick={signout}>Log Out</button>
+              
             </li>
           )}
         </ul>

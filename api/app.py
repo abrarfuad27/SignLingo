@@ -5,6 +5,7 @@ import tensorflow as tf
 from keras.optimizers import Adam
 from PIL import Image
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.ext.mutable import Mutable
 
 
 app = Flask(__name__)
@@ -17,7 +18,7 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
-    activities = db.Column(db.JSON, default=list)
+    activities = db.Column(MutableList.as_mutable(db.JSON), default=list)
 
 
 
@@ -57,11 +58,12 @@ def update():
     data = request.get_json()
     username = data.get('username')
     percentage = data.get('percentage')
-    print(username,percentage)
     user = User.query.filter_by(username=username).first()
     if user:
         user.activities.append(percentage)
-        db.session.commit()  # Add this line to commit changes to the database
+        print(user.activities,percentage)
+        db.session.commit() 
+        print("After commit:", user.activities) # Add this line to commit changes to the database
         return jsonify({'message': 'Record of user was updated successfully','arr':user.activities}), 200
     else:
         return jsonify({'error': 'User not found'}), 404
