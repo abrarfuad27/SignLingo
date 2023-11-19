@@ -1,6 +1,8 @@
-import React, { useState, Component } from "react";
+import React, { useState, Component, useContext, useEffect } from "react";
 import Navbar from "./Navbar";
+import { userContext } from "../UserContext";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const questions = [
   {
@@ -271,9 +273,32 @@ export default function Quiz1() {
   const [userAnswer, setUserAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [correctOption, setCorrectOption] = useState(null);
+  const { userInfo, setUserInfo } = useContext(userContext);
+
+  useEffect(() => {
+    if (userInfo.username && currentQuestion === finalArray.length) {
+      const updateRecords = async () =>{
+        try {
+          const userData = {username: userInfo.username, percentage : (score/finalArray.length * 100)};
+          const response = await axios.post(
+            "http://127.0.0.1:5000/api/update",
+            userData
+          );
+          console.log(response.data.message)
+        } catch (err){
+          console.log(`Error->${err}`);
+        }
+      };
+      updateRecords();
+    }
+  }, [currentQuestion]);
 
   const handleAnswer = (answer) => {
-    const sound = new Audio(answer? '/assets/sounds/correct_answer.mp3' : '/assets/sounds/wrong_answer.mp3');
+    const sound = new Audio(
+      answer
+        ? "/assets/sounds/correct_answer.mp3"
+        : "/assets/sounds/wrong_answer.mp3"
+    );
     sound.play();
     setUserAnswer(answer);
 
@@ -284,6 +309,7 @@ export default function Quiz1() {
   };
 
   const handleNextQuestion = () => {
+    console.log(userInfo.username)
     // Move to the next question if the user answered correctly
     setCurrentQuestion(currentQuestion + 1);
     setUserAnswer(null);

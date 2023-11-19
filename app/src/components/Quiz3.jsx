@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, Component, useContext, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Webcam from "react-webcam";
 import { Link } from "react-router-dom";
+import { userContext } from "../UserContext";
+
 
 const questions = ["6", "E", "D", "G"];
 
@@ -11,6 +13,30 @@ export default function Quiz3() {
   const webcamRef = React.useRef(null);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const { userInfo, setUserInfo } = useContext(userContext);
+
+
+  useEffect(() => {
+    if (userInfo.username && currentQuestion === questions.length) {
+      const updateRecords = async () => {
+        try {
+          const userData = {
+            username: userInfo.username,
+            percentage: (score / questions.length) * 100,
+          };
+          const response = await axios.post(
+            "http://127.0.0.1:5000/api/update",
+            userData
+          );
+          console.log(response.data.message);
+        } catch (err) {
+          console.log(`Error->${err}`);
+        }
+      };
+      updateRecords();
+    }
+  }, [currentQuestion]);
+
 
   const nextQuestion = () => {
     setCurrentQuestion(currentQuestion + 1);

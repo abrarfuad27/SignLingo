@@ -4,10 +4,22 @@ import numpy as np
 import tensorflow as tf
 from keras.optimizers import Adam
 from PIL import Image
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'  # SQLite database for simplicity
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    activities = db.Column(db.JSON, default=[])
+
+
 
 
 @app.route('/', methods=['OPTIONS'])
@@ -17,6 +29,54 @@ def handle_options():
     response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
     response.headers['Access-Control-Allow-Methods'] = 'OPTIONS, POST'
     return response
+
+@app.route('/api/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    new_user = User(username=data['username'], email=data['email'], password=data['password'])
+    db.session.add(new_user)
+    db.session.commit()
+    return jsonify({'message': 'Registration successful'})
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    user = User.query.filter_by(username=username).first()
+    if user and password == user.password:
+        return jsonify({'message': 'Login successful', 'user': {'username': user.username, 'email': user.email}}), 200
+    else:
+        # Invalid credentials
+        return jsonify({'message': 'Invalid username or password'}), 401
+    
+
+@app.route('/api/update', methods=['POST'])
+def update():
+    data = request.get_json()
+    username = data.get('username')
+    percentage = data.get('percentage')
+    user = User.query.filter_by(username=username).first()
+    if user:
+        user.activities.append(percentage)
+        db.session.commit()  # Add this line to commit changes to the database
+        return jsonify({'message': 'Record of user was updated successfully','arr':user.activities}), 200
+    else:
+        return jsonify({'error': 'User not found'}), 404
+    
+
+@app.route('/api/getrecord', methods=['POST'])
+def get_record():
+    data = request.get_json()
+    username = data.get('username')
+    user = User.query.filter_by(username=username).first()
+    if user:
+        
+        return jsonify({'activity': user.activities}), 200
+    else:
+        return jsonify({'error': 'User not found'}), 404
+
 
 @app.route('/api/photo', methods=['POST'])
 def receive_photo():
