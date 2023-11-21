@@ -1,4 +1,4 @@
-![penguinslay]https://github.com/abrarfuad27/SignLingo/commit/a8c4ae352dffadeaf220af06e36d98122b28b9c6
+![penguinslay](https://github.com/abrarfuad27/SignLingo/commit/a8c4ae352dffadeaf220af06e36d98122b28b9c6)
 
 # Getting Started with Create React App
 
