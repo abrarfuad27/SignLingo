@@ -1,6 +1,16 @@
 # An inclusive ASL learning tool
 ![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/f127f719-e0f1-4d91-805c-7b7f77e8b9c8)
 
+# Learning page that brings everything together!
+![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/82f58117-7a2e-40a7-9cd1-311531206e17)
+
+# Immediately test yourself with quizzes for maximum retention
+![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/f38ccd6a-b075-4ba0-8678-e33f20322db3)
+
+![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/c55bc10f-103a-452d-bc94-5dbda3825a9a)
+
+
+
 
 # Getting Started with Create React App
 
