@@ -5,9 +5,9 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
 ![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/f127f719-e0f1-4d91-805c-7b7f77e8b9c8)
 
 # Features
-● A learning page that serves as a manual for ASL.
-● Three interactive quizzes that test numbers, alphabets, and a DIY mode.
-● Log in to keep track of progress.
+- A learning page that serves as a manual for ASL.
+- Three interactive quizzes that test numbers, alphabets, and a DIY mode.
+- Log in to keep track of progress.
 
 # Learning page that brings everything together!
 
