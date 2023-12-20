@@ -33,8 +33,29 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
 2. Navigate to the 'app' directory inside the repo:
 ```bash
     cd SignLingo/app
-    ```
-3. Install required packages
+```
+3. Install required packages for frontend
 ```bash
-    npm install
-    ```
+   npm install
+```
+
+4. Navigate to the 'api' directory inside the repo:
+```bash
+    cd SignLingo/api
+```
+
+5. Install necessary packages for backend, and activate virtual environment (optional)
+```bash
+    pip install -r requirements.txt
+    env/Scripts/activate
+```
+
+6. Run the app
+```bash
+    py app.py
+```
+
+The server should be running on http://localhost:3000/
+
+
+
