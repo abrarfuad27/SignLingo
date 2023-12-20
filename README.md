@@ -6,7 +6,7 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
 
 ## Features
 - A learning page that serves as a manual for ASL.
-- Three interactive quizzes that test numbers, alphabets, and a DIY mode.
+- Three interactive quizzes that test numbers (1-9), alphabets (A-Z), and a DIY mode.
 - Log in to keep track of progress.
 
 ## Learning page that brings everything together!
