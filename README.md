@@ -1,5 +1,5 @@
-# SignLingo
-An inclusive ASL learning tool
+# SignLingo -- An inclusive ASL learning tool
+
 The inspiration behind our project stemmed from the desire to create an inclusive learning tool for sign language. Creating accessible learning tools for sign language is not only a matter of inclusivity but also a recognition of the diverse linguistic and cultural needs of the deaf community. Recognizing the significance of sign language in fostering communication for individuals with hearing impairments, we aimed to leverage technology to make the learning process more engaging, accessible, and effective.
 ![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/f127f719-e0f1-4d91-805c-7b7f77e8b9c8)
 
