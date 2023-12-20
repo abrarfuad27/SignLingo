@@ -34,9 +34,10 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
 ```bash
     cd SignLingo/app
 ```
-3. Install required packages for frontend
+3. Install required packages and start the frontend server
 ```bash
    npm install
+   npm start
 ```
 
 4. Navigate to the 'api' directory inside the repo:
