@@ -9,6 +9,9 @@
 
 ![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/c55bc10f-103a-452d-bc94-5dbda3825a9a)
 
+# Try out signs and evaluate yourself
+
+![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/a447eefa-4690-4997-8329-02c175dc2188)
 
 
 
