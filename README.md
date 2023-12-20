@@ -1,4 +1,6 @@
-![penguinslay](https://github.com/abrarfuad27/SignLingo/commit/a8c4ae352dffadeaf220af06e36d98122b28b9c6)
+# An inclusive ASL learning tool
+![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/f127f719-e0f1-4d91-805c-7b7f77e8b9c8)
+
 
 # Getting Started with Create React App
 
