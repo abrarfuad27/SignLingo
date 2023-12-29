@@ -39,7 +39,6 @@ export default function Navbar() {
               <Link className="navbar-item" to="/records">
                 {`Hi, ${userInfo.username}`}
               </Link>
-              <button onClick={signout}>Log Out</button>
               
             </li>
           )}

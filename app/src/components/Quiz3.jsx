@@ -5,7 +5,6 @@ import Webcam from "react-webcam";
 import { Link } from "react-router-dom";
 import { userContext } from "../UserContext";
 
-
 const questions = ["6", "E", "D", "G"];
 
 export default function Quiz3() {
@@ -14,7 +13,6 @@ export default function Quiz3() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const { userInfo, setUserInfo } = useContext(userContext);
-
 
   useEffect(() => {
     if (userInfo.username && currentQuestion === questions.length) {
@@ -36,7 +34,6 @@ export default function Quiz3() {
       updateRecords();
     }
   }, [currentQuestion]);
-
 
   const nextQuestion = () => {
     setCurrentQuestion(currentQuestion + 1);
@@ -94,15 +91,15 @@ export default function Quiz3() {
               <button className="nextques" onClick={capture}>
                 Take Picture
               </button>
-              {responseMessage && <p>Response: {responseMessage}</p>}
+
               <button
                 className="nextques"
                 disabled={responseMessage === null}
                 onClick={nextQuestion}
               >
-                {" "}
                 Next Question
               </button>
+              {responseMessage && <p>Response: {responseMessage}</p>}
             </div>
           </div>
         ) : (

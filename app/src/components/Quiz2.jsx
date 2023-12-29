@@ -276,7 +276,7 @@ const questions = [
     question: "What is W in sign language?",
     answers: [
       { image: "/assets/alphabet_image/W.jpg", correct: true },
-      { image: "/assets/alphabet_image/0.jpg", correct: false },
+      { image: "/assets/alphabet_image/1.jpg", correct: false },
       { image: "/assets/alphabet_image/2.jpg", correct: false },
       { image: "/assets/alphabet_image/I.jpg", correct: false },
     ],

@@ -46,7 +46,6 @@ body {
   width: 4rem;
   height: 4rem;
   margin-right: 1rem;
-
 }
 
 .homepage-buttons {
@@ -56,7 +55,6 @@ body {
   align-items: center;
   gap: 4rem;
   margin-top: 2rem;
-
 }
 
 .continue-button {
@@ -98,15 +96,16 @@ body {
   border-radius: 10px;
   border: none;
   height: 3rem;
-  margin-left: 6rem;
-  color: #196c7b;
-  background-color: #f5dae7;
+  margin-left: 58rem;
+  margin-top: 1rem;
+  background-color: #0491aa;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s,
     transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transitions for background color and transform with cubic-bezier timing function */
   &:hover {
-    background-color: #ff219b; /* Darker green on hover */
-    transform: scale(1.02);
+    background-color: #7a12e3; /* Darker green on hover */
+    transform: scale(1.01);
   }
 }
 
@@ -346,6 +345,7 @@ ul {
 .navbar-item {
   color: white;
   font-size: larger;
+  text-decoration: none;
 }
 
 .login-container {
@@ -388,8 +388,6 @@ input:focus {
   outline: none;
 }
 
-
-
 .register-container {
   display: flex;
   flex-direction: column;
@@ -411,4 +409,22 @@ input:focus {
 
 .regisster-form h1 {
   text-align: center;
+}
+
+.chart-container {
+  margin-top: 4rem;
+  width: 40%; /* Adjust as needed */
+  height: 40%; /* Adjust as needed */
+  margin-left: 21rem;
+}
+
+.mean-score-header{
+  margin-left: 16rem;
+  color: #277c4f;
+  
+}
+
+.mean-score{
+  font-weight: bold;
+  opacity: 1.1;
 }

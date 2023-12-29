@@ -5,7 +5,7 @@ import tensorflow as tf
 from keras.optimizers import Adam
 from PIL import Image
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.ext.mutable import Mutable
+from sqlalchemy.ext.mutable import MutableList
 
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
-    activities = db.Column(db.JSON, default=list)
+    activities = db.Column(MutableList.as_mutable(db.JSON), default=list)
 
 
 

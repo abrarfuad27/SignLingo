@@ -177,8 +177,8 @@ const questions = [
     options: [
       { image: "/assets/alphabet_image/6.jpg", correct: false },
       { image: "/assets/alphabet_image/8.jpg", correct: true },
-      { image: "/assets/alphabet_image/9.jpg", correct: true },
-      { image: "/assets/alphabet_image/3.jpg", correct: true },
+      { image: "/assets/alphabet_image/9.jpg", correct: false },
+      { image: "/assets/alphabet_image/3.jpg", correct: false },
     ],
   },
   {
