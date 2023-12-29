@@ -26,6 +26,10 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
 ![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/a447eefa-4690-4997-8329-02c175dc2188)
 
 
+## Track your progress
+
+![image](https://github.com/abrarfuad27/SignLingo/assets/116526066/10fc2cb7-a825-41ea-b467-4c2a42c5ae1d)
+
 
 ## How to get started
 
