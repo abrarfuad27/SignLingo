@@ -36,7 +36,7 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
 1. Clone the repository
 2. Navigate to the 'app' directory inside the repo:
 ```bash
-    cd SignLingo/app
+    cd SignLingo/frontend
 ```
 3. Install required packages and start the frontend server
 ```bash
@@ -46,7 +46,7 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
 
 4. Navigate to the 'api' directory inside the repo:
 ```bash
-    cd SignLingo/api
+    cd SignLingo/backend
 ```
 
 5. Install necessary packages for backend, and activate virtual environment (optional)
@@ -60,7 +60,12 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
     py app.py
 ```
 
-The server should be running on http://localhost:3000/
+Or if want to set everything up in one command, cd to root of the project directory and run the following:
+```bash
+    docker-compose up
+```
+
+The application should be running on http://localhost:3000/
 
 
 
