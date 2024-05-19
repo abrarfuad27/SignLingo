@@ -60,7 +60,7 @@ The inspiration behind our project stemmed from the desire to create an inclusiv
     py app.py
 ```
 
-Or if want to set everything up in one command, cd to root of the project directory and run the following:
+Or if you want to set everything up in one command, cd to root of the project directory and run the following:
 ```bash
     docker-compose up
 ```
