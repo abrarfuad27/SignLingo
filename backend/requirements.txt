@@ -1,0 +1,11 @@
+flask
+flask_cors
+flask_sqlalchemy
+sqlalchemy
+numpy
+tensorflow
+keras
+Pillow
+matplotlib
+seaborn
+opencv-python

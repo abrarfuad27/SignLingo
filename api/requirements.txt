@@ -1,8 +1,0 @@
-matplotlib
-seaborn
-keras
-flask
-tensorflow
-opencv-python
-numpy
-flask-cors
